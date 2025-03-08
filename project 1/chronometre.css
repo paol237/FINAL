@@ -1,0 +1,367 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg: #4A89DC;
+  --orange:#FF5733;
+  --color:#808080;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  /* align-items: center; */
+  /* background-size: cover; */
+
+}
+
+.general{
+  place-content: center;
+  display: flex;
+  justify-self: center;
+  background:url('chronometre.jpg');
+  height: 600px;
+  background-position: center;
+  width: 500px;
+
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 408px;
+  height: 409px;
+  border-radius: 50%;
+  margin-top: 154px;
+  margin-left: 13px;
+  transition: .1s all;
+
+
+  h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom:  30px;
+  }
+}
+
+.times-elments {
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+
+  p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+    color: white;
+    span{
+      color: var(--orange);
+      filter: brightness(100%);
+      margin-right: 15px;
+    }
+  }
+}
+
+.btn-elements  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  button {
+    /* padding: 15px 30px; */
+    height: 50px;
+    width: 50px;
+    font-size: 1.1em;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    border: solid var(--orange);
+    filter: brightness(90%);
+    /* animation:  border 2s linear infinite; */
+
+
+    i{
+      font-size: 2em;
+    }
+  }
+}
+
+@keyframes border{
+  0%{
+    border:solid white;
+  }
+
+  25%{
+    border: solid rgb(255, 3, 3);
+  }
+
+  50%{
+    border: solid rgb(255, 125, 3);
+  }
+
+  75%{
+    border: solid var(--bg);
+  }
+
+  100%{
+    border: solid dodgerblue;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .general{
+    place-content: center;
+    display: flex;
+    justify-self: center;
+    background:url('chronometre.jpg');
+    height: 500px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* background-color: transparent; */
+    width: 222px;
+    height: 222px;
+    border-radius: 50%;
+    margin-top: 171px;
+    margin-left: 7px;
+  
+  
+    h1{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      padding-bottom:  10px;
+      font-size: 1.3em;
+    }
+  }
+
+  .times-elments {
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    font-weight: bold;
+  
+    p{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: .6em;
+      color: white;
+      span{
+        color: var(--orange);
+        filter: brightness(100%);
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .btn-elements  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+    button {
+      /* padding: 15px 30px; */
+      height: 35px;
+      width: 35px;
+      font-size: 1.1em;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      color: white;
+      margin-top: 20px;
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid var(--orange);
+      filter: brightness(90%);
+      /* animation:  border 2s linear infinite; */
+  
+  
+      i{
+        font-size: 2em;
+      }
+    }
+
+    button:last-child{
+
+      i{
+
+      font-size: 1.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 250px) {
+  .general{
+    place-content: center;
+    display: flex;
+    justify-self: center;
+    background:url('chronometre.jpg');
+    height: 500px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* background-color: transparent; */
+    width: 166px;
+    height: 166px;
+    border-radius: 50%;
+    margin-top: 191px;
+    margin-left: 7px;
+  
+  
+    h1{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      padding-bottom:  10px;
+      font-size: 1.1em;
+    }
+  }
+
+  .times-elments {
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    font-weight: bold;
+  
+    p{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: .4em;
+      color: white;
+      span{
+        color: var(--orange);
+        filter: brightness(100%);
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .btn-elements  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+    button {
+      /* padding: 15px 30px; */
+      height: 25px;
+      width: 25px;
+      font-size: 1em;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      color: white;
+      margin-top: 20px;
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border:2px solid var(--orange);
+      filter: brightness(90%);
+      /* animation:  border 2s linear infinite; */
+  
+  
+      i{
+        font-size: 1em;
+      }
+    }
+
+    button:last-child{
+
+      i{
+
+      font-size: 1em;
+      }
+    }
+  }
+}
+
+/* .laps{
+  position: absolute;
+  top: 70%;
+  width: 20%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--bg);
+  box-shadow: 0 0 5px 2px rgb(168, 167, 167);
+
+
+  p{
+    color: white;
+    font-size: 1.5em;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+} */
+
+.footer{
+  position: relative;
+  top: 195px;
+  background-color: rgb(34, 34, 34);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    filter: brightness(70%);
+    span{
+      color: var(--orange);
+
+      .one{
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,438 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg: #4A89DC;
+  --orange:#FF5733;
+  --color:#808080;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+
+}
+
+.container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    background-color: black;
+    border-radius: 50px 1px;
+    box-shadow: 0 0 20px 1px rgba(128, 128, 128, 0.849);
+    position: relative;
+    z-index: 0;
+    transition: .3s all;
+  
+  .not {
+    position: absolute;
+    z-index: -1;
+    background-color: #333;
+    width: 100%; /* Remplir toute la largeur du parent */
+    height: 100%; /* Remplir toute la hauteur du parent */
+    clip-path: polygon(0 0, 100% 0, 0 100%); /* Découper selon la diagonale */
+  }
+
+    /* transform: perspective(500px) rotateY(10deg);  */
+  .text{
+    width: 65%;
+    /* background-color: #4A89DC; */
+    position: relative;
+    left: 20%;
+    overflow: hidden;
+
+    h1{
+      text-align: center;
+      color: var(--orange);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.8em;
+      text-transform: capitalize;
+      animation: trans 10s linear infinite;
+    }
+  }
+
+
+  form {
+    margin: 1px 10px;
+    width: 100%;
+    position: relative;
+
+    .one {
+     font-weight: 900;
+     font-size: .8em;
+     color: white;
+     position: absolute;
+     left: 20px;
+     top: 15px;
+     background-color: #333;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     text-transform: capitalize;
+
+    }
+
+    .ones{
+      font-weight: 900;
+      font-size: .8em;
+      color: white;
+      position: absolute;
+      left: 20px;
+      top: 100px;
+      background-color: #333;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-transform: capitalize;
+    }
+
+
+    input {
+      width: 90%;
+      margin: 8px 15px;
+      padding: 15px;
+      border: 2px solid gainsboro;
+      outline: none;
+      background: transparent;
+      border-radius: 4px;
+      color: white;
+      /* border-top: none; */
+    }
+
+    /*ici c'est pour gere l'element quand l'utlisateurs saisir une valeur*/
+     input:valid {
+      padding-left: 10px;
+    } 
+
+
+    input[type="submit"]{
+      background-color: transparent;
+      border: 2px solid var(--orange);
+      margin-top: 5px;
+      color: var(--orange);
+      font-weight: bold;
+      transition: .4s all;
+    }
+
+    input[type="submit"]:hover{
+      background-color: var(--orange);
+      color: white;
+      cursor: pointer;
+    }
+
+  }
+}
+
+.container:hover{
+  background-color: #333;
+
+  .not {
+    background-color: black;
+
+  }
+}
+
+
+
+#message {
+  width: 300px;
+  background-color: whitd;
+  padding: 10px 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8em;
+  border-radius: 5px;
+  margin-top: 10px;
+  animation: message .5s linear;
+  display: none;
+
+  h3 {
+    font-weight: 100;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+  }
+
+  p {
+    margin-left: 8px;
+    line-height: 30px;
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+@keyframes trans {
+  from{
+    transform: translateX(-100%);
+  }
+
+  to{
+    transform: translateX(100%);
+  }
+}
+
+@keyframes message {
+  from{
+    transform: translatey(20px);
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+/*pour le exigeances*/
+
+.invalid {
+  color: red;
+}
+
+.invalid::before {
+  position: relative;
+  left: -7px;
+  content: '\2715' ;
+}
+
+.valid {
+  color: green;
+}
+
+.valid::before {
+  position: relative;
+  left: -7px;
+  content: '\2713' ;
+}
+
+
+@media (max-width:500px) {
+  .container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 96%;
+    background-color: black;
+    border-radius: 50px 1px;
+    box-shadow: 0 0 38px 1px var(--bg);
+    position: relative;
+    z-index: 0;
+  
+  .not {
+    position: absolute;
+    z-index: -1;
+    background-color: #333;
+    width: 100%; /* Remplir toute la largeur du parent */
+    height: 100%; /* Remplir toute la hauteur du parent */
+    clip-path: polygon(0 0, 100% 0, 0 100%); /* Découper selon la diagonale */
+  }
+
+    /* transform: perspective(500px) rotateY(10deg);  */
+  .text{
+    width: 65%;
+    /* background-color: #4A89DC; */
+    position: relative;
+    left: 20%;
+    overflow: hidden;
+
+    h1{
+      text-align: center;
+      color: var(--orange);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.2em;
+      text-transform: capitalize;
+      animation: trans 10s linear infinite;
+    }
+  }
+
+
+  form {
+    margin: 1px 10px;
+    width: 100%;
+    position: relative;
+
+    .one {
+     font-weight: 900;
+     font-size: .8em;
+     color: white;
+     position: absolute;
+     left: 20px;
+     top: 15px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     text-transform: capitalize;
+
+    }
+
+    .ones{
+      font-weight: 900;
+      font-size: .8em;
+      color: white;
+      position: absolute;
+      left: 20px;
+      top: 100px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-transform: capitalize;
+    }
+
+
+    input {
+      width: 90%;
+      margin: 8px 15px;
+      padding: 15px;
+      border: 2px solid gainsboro;
+      outline: none;
+      background: transparent;
+      border-radius: 4px;
+      color: white;
+      /* border-top: none; */
+    }
+
+    /*ici c'est pour gere l'element quand l'utlisateurs saisir une valeur*/
+     input:valid {
+      padding-left: 10px;
+    } 
+
+
+    input[type="submit"]{
+      background-color: transparent;
+      border: 2px solid var(--orange);
+      margin-top: 5px;
+      color: var(--orange);
+      font-weight: bold;
+      transition: .4s all;
+    }
+
+    input[type="submit"]:hover{
+      background-color: var(--orange);
+      color: white;
+      cursor: pointer;
+    }
+
+  }
+}
+
+ 
+  
+
+}
+
+@media (max-width:350px) {
+  .container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    background-color: black;
+    border-radius: 50px 1px;
+    box-shadow: 0 0 38px 1px var(--bg);
+    position: relative;
+    z-index: 0;
+  
+  .not {
+    position: absolute;
+    z-index: -1;
+    background-color: #333;
+    width: 100%; /* Remplir toute la largeur du parent */
+    height: 100%; /* Remplir toute la hauteur du parent */
+    clip-path: polygon(0 0, 100% 0, 0 100%); /* Découper selon la diagonale */
+  }
+
+    /* transform: perspective(500px) rotateY(10deg);  */
+  .text{
+    width: 65%;
+    /* background-color: #4A89DC; */
+    position: relative;
+    left: 20%;
+    overflow: hidden;
+
+    h1{
+      text-align: center;
+      color: var(--orange);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: .8em;
+      text-transform: capitalize;
+      animation: trans 10s linear infinite;
+    }
+  }
+
+
+  form {
+    margin: 1px 10px;
+    width: 100%;
+    position: relative;
+
+    .one {
+     font-weight: 900;
+     font-size: .8em;
+     color: white;
+     position: absolute;
+     left: 5px;
+     top: 20px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     text-transform: capitalize;
+
+    }
+
+    .ones{
+      font-weight: 900;
+      font-size: .8em;
+      color: white;
+      position: absolute;
+      left: 5px;
+      top: 93px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-transform: capitalize;
+    }
+
+
+    input {
+      width: 90%;
+      margin: 8px auto;
+      padding: 10px;
+      border: 2px solid gainsboro;
+      outline: none;
+      background: transparent;
+      border-radius: 4px;
+      color: white;
+      /* border-top: none; */
+    }
+
+    /*ici c'est pour gere l'element quand l'utlisateurs saisir une valeur*/
+     input:valid {
+      padding-left: 10px;
+    } 
+
+
+    input[type="submit"]{
+      background-color: transparent;
+      border: 2px solid var(--orange);
+      margin-top: 5px;
+      color: var(--orange);
+      font-weight: bold;
+      transition: .4s all;
+    }
+
+    input[type="submit"]:hover{
+      background-color: var(--orange);
+      color: white;
+      cursor: pointer;
+    }
+
+  }
+}
+
+ 
+  
+
+}
+
